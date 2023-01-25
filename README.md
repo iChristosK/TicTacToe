@@ -3,10 +3,14 @@ This is a repository for a new On Air Branded Tic Tac Toe React Application
 
   # Run instructions for Android:
     • Have an Android emulator running (quickest way to get started), or a device connected.
-    • cd TicTacToeApp/ && npx react-native run-android
+    • cd TicTacToeApp/
+    • npm install
+    • npx react-native run-android
   
   # Run instructions for iOS:
-    • cd TicTacToeApp/ && npx react-native run-ios
+    • cd TicTacToeApp/ 
+    • npm install
+    • npx react-native run-ios
     - or -
     • Open TicTacToeApp/ios/TicTacToeApp.xcworkspace in Xcode or run "xed -b ios"
     • Hit the Run button
@@ -21,13 +25,16 @@ This is a repository for a new On Air Branded Tic Tac Toe React Application
 
 # Step 1 - Create Project - 1m
 Created a new React Native project: 
-Using the command `npx react-native init TicTacToeApp --template react-native-template-typescript` to create a new React Native project with TypeScript. 
+Using the command
+ `npx react-native init TicTacToeApp --template react-native-template-typescript` 
+ to create a new React Native project with TypeScript. 
 
 This command will create a new directory with the name projectName and initialize it with a basic React Native project structure. This command also includes the TypeScript template, so it will automatically set up the TypeScript configuration for the project.
 
 
 # Step 2 - Install dependencies - 1m
-Then, I installed the required packages such as redux, react-redux, and @reduxjs/toolkit using the command `npm install --save redux react-redux @reduxjs/toolkit`
+Then, I installed the required packages such as redux, react-redux, and @reduxjs/toolkit using the command
+ `npm install --save redux react-redux @reduxjs/toolkit`
 
 
 # Step 3 - Creation of the store and game state - 1h
@@ -39,3 +46,17 @@ In this step I created the game board component and the individual buttons compo
 
 # Step 5 - Game Logic of the winner - 2.5h 
 This logic checks a 3x3 board (as a 2D array) to determine if there is a winner. It checks the rows, columns, and diagonals of the board for three consecutive matching symbols. If there is a winner, it returns the symbol of the winning player. If there are no matches, it checks for any empty spaces on the board and returns an empty string if there are any. If all spaces are filled and there is no winner, it returns "TIE".
+
+# Step 6 - System Style - 1h
+# Step 7 - 
+Create component current player
+Add checkWinner inside somewhere
+Make ticTacToe component smaller
+Add board component
+Add organisms
+Add template
+Add home Screen
+To add system wide dark mode
+(style custom buttons)
+Add unit/ui testing
+Add logo in Launchscreen and App icon

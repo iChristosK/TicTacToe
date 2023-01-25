@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export interface TicTacToeState {
     board: string[][];
     currentPlayer: 'X' | 'O';
-    winner: 'X' | 'O' | null;
+    winner: 'X' | 'O' | 'TIE' | null;
 }
 
 const initialState: TicTacToeState = {
