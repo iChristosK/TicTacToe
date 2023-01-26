@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export default StyleSheet.create({
+export const style = StyleSheet.create({
     board: {
         marginTop: 10,
         flex: 1,

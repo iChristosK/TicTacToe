@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 
-export default StyleSheet.create({
+export const style = StyleSheet.create({
     imageContainer: {
         width: 300,
         height: 75,

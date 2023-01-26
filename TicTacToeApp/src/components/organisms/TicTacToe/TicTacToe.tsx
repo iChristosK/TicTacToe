@@ -4,7 +4,7 @@ import { TicTacToeState } from '../../../store/reducer/gameReducer';
 import DarkMode from '../../../utils/darkmode';
 import { Logo } from '../../atoms/logo/logo';
 import { Board } from '../../molecules/board/Board';
-import styles from './style'
+import { styles } from './style'
 import { WinnerBox } from '../../atoms/winnerBox/winnerBox';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Controls } from '../controls/controls';

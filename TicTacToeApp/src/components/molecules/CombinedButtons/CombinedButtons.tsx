@@ -1,6 +1,6 @@
 import { GestureResponderEvent, Text, View } from 'react-native';
 import { CustomButton } from '../../atoms/buttons/customButton';
-import style from './style';
+import { style } from './style';
 
 export interface WinnerProps {
     winnerTitle: string,

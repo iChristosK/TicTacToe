@@ -1,6 +1,6 @@
 import { Image, StyleSheet, View } from 'react-native';
 import { LogoUrl } from '../../../utils/global';
-import style from './style';
+import { style } from './style';
 
 export const Logo = () => {
     return (

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export default StyleSheet.create({
+export const style = StyleSheet.create({
     controlsContainer: {
         flex: 1,
         alignSelf: 'stretch',

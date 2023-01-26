@@ -5,7 +5,7 @@ import { reset, setWinner } from '../../../store/reducer/gameReducer';
 import { checkWinnerString, resetString, tieString } from '../../../utils/global';
 import CustomText from '../../atoms/texts/CustomText';
 import { CombinedButtons } from '../../molecules/CombinedButtons/CombinedButtons';
-import styles from './style';
+import { style } from './style'
 
 export interface ControlProps {
     board: string[][],
@@ -32,8 +32,8 @@ export const Controls = ({ board, currentPlayer }: ControlProps) => {
 
     return (
 
-        <View style={styles.controlsContainer}>
-            <CustomText style={styles.currentPlayerText}>
+        <View style={style.controlsContainer}>
+            <CustomText style={style.currentPlayerText}>
                 {currentPlayer} is playing!
             </CustomText>
             <CombinedButtons winnerTitle={checkWinnerString} resetTitle={resetString} onPressWinner={handleCheckWinner} onPressReset={handleReset} />

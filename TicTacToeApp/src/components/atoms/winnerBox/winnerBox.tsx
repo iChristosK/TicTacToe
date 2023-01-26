@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import { tieString } from '../../../utils/global';
 import CustomText from '../texts/CustomText';
-import style from './style';
+import { style } from './style';
 
 export interface WinnerProps {
     winner: string | null

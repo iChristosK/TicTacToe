@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer';
 import { tieString } from '../../../utils/global';
 import { WinnerBox } from './winnerBox';
 
-// test the above code with react-native-testing-library without using enzyme only jest 
 describe('WinnerBox', () => {
     it('should render correctly when there is a winner', () => {
         const tree = renderer.create(<WinnerBox winner="X" />).toJSON();

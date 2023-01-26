@@ -61,7 +61,7 @@ I have added a dark mode functional component in utils that wraps any children o
 
 
 # Step 8 - Unit Tests / Snapshot testing - 1h 
-
+I have tested the game using react-native-testing-library and jest. The most important test is inside the logic/gameLogic.test.ts which checks the function for the winner of the game! I have added a few test cases for some components and snapshot testing!
 
 # Step 9 - Emulator/Physical Device Testing the game - 30m
 I always like to run my applications on as many android and iOS emulator to make sure that both platforms are consistent when it comes to the interface as well as the functionalities. So I have tested the game on an emulator and on my personal device to ensure that it is working as expected.
@@ -69,6 +69,9 @@ I always like to run my applications on as many android and iOS emulator to make
 # TOTAL HOURS : 8.52
 
 # TODO: 
-Add unit/ui testing 
+
+test the below code with react-native-testing-library without using enzyme only jest
+
 Delete unused elements 
 (especially from styles)
+
