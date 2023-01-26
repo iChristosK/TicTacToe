@@ -1,52 +1,30 @@
-import { Button, GestureResponderEvent, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
-import { checkWinner } from '../../../logic/gameLogic';
-import { placeMark, reset, setWinner, TicTacToeState } from '../../../store/reducer/gameReducer';
+import { useColorScheme, View } from 'react-native';
+import { useSelector } from 'react-redux';
+import { TicTacToeState } from '../../../store/reducer/gameReducer';
 import DarkMode from '../../../utils/darkmode';
 import { Logo } from '../../atoms/logo/logo';
-import CustomText from '../../atoms/texts/CustomText';
 import { Board } from '../../molecules/board/Board';
-import { CombinedButtons } from '../../molecules/CombinedButtons/CombinedButtons';
 import styles from './style'
 import { WinnerBox } from '../../atoms/winnerBox/winnerBox';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Controls } from '../controls/controls';
 
 export const TicTacToe = () => {
-    const game = useSelector((state: TicTacToeState) => state)
-    const board = game.board
-    const winner = game.winner
-    const currentPlayer = game.currentPlayer
-    const dispatch = useDispatch();
-
-    function handleCheckWinner() {
-        const winner = checkWinner(board)
-        if (winner) {
-            if (winner === 'TIE') {
-                dispatch(setWinner("TIE"))
-            } else {
-                dispatch(setWinner(winner));
-            }
-        }
-    }
-
-    function handleReset() {
-        dispatch(reset());
-    }
+    const isDarkMode = useColorScheme() === 'dark';
+    const backgroundStyle = {
+        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    };
+    const gameState = useSelector((state: TicTacToeState) => state)
+    const { board, currentPlayer, winner } = gameState;
     return (
 
         <DarkMode>
-            <View style={styles.container}>
+            <View style={[styles.container, { backgroundColor: backgroundStyle.backgroundColor }]}>
                 <Logo />
-                <Board board={board} winner={winner} />
                 <WinnerBox winner={winner} />
-
-                <View style={styles.controlsContainer}>
-                    <CustomText style={styles.currentPlayerText}>
-                        {currentPlayer} is playing!
-                    </CustomText>
-                    <CombinedButtons winnerTitle={'Check Winner'} resetTitle={'Reset'} onPressWinner={handleCheckWinner} onPressReset={handleReset} />
-                </View>
+                <Board board={board} winner={winner} />
+                <Controls board={board} currentPlayer={currentPlayer} />
             </View>
-
         </DarkMode >
 
 

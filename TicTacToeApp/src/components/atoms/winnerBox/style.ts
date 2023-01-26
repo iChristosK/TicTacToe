@@ -5,11 +5,11 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        height: 60
     },
     winnerText: {
         fontSize: 34,
         fontWeight: 'bold',
-        color: '#f54a28',
-        margin: 5,
+        color: '#FC4D3C',
     },
 });

@@ -12,14 +12,13 @@ export default StyleSheet.create({
     },
     row: {
         margin: 0,
-        backgroundColor: '#f54a28',
         borderRadius: 8,
         flexDirection: 'row',
     },
     cell: {
         width: 100,
         height: 100,
-        backgroundColor: '#fff',
+        backgroundColor: '#FC4D3C',
         alignItems: 'center',
         justifyContent: 'center',
         margin: 6,
@@ -34,8 +33,8 @@ export default StyleSheet.create({
         justifyContent: 'center',
     },
     cellText: {
-        color: 'black',
-        fontSize: 24,
+        color: 'white',
+        fontSize: 60,
         fontWeight: 'bold',
     },
 });

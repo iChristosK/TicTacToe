@@ -24,13 +24,13 @@ export const Board = ({ board, winner }: BoardProps) => {
 
     return (
 
-        <View style={styles.board}>
+        <View style={[styles.board, { backgroundColor: backgroundStyle.backgroundColor }]}>
             {board.map((row, rowIndex) => (
-                <View key={rowIndex} style={styles.row}>
+                <View key={rowIndex} style={[styles.row, { backgroundColor: backgroundStyle.backgroundColor }]}>
                     {row.map((col, colIndex) => (
                         <View key={colIndex} style={styles.cell}>
                             <TouchableOpacity
-                                style={styles.cellButton}
+                                style={[styles.cellButton]}
                                 onPress={() => handlePlaceMark(rowIndex, colIndex)}
                             >
                                 <Text style={styles.cellText}>{col || ''}</Text>

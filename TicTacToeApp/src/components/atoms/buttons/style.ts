@@ -7,18 +7,19 @@ export default StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 8,
         fontWeight: 'bold',
-        margin: 5,
+        margin: 1,
     },
     customButtonContainer: {
         borderRadius: 8,
         width: '90%',
         alignSelf: 'center',
-        // backgroundColor: 'white',
-
+        backgroundColor: '#FC4D3C'
     },
     customButtonText: {
-        fontSize: 15,
+        fontSize: 18,
+        fontWeight: 'bold',
         padding: 10,
         alignSelf: 'center',
+        color: 'white'
     },
 });

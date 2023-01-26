@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WinnerBox should render correctly when it is a tie 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flex": 1,
+      "height": 60,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "black",
+        "fontSize": 34,
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+     IT IS A 
+    TIE
+     ! 
+  </Text>
+</View>
+`;
+
+exports[`WinnerBox should render correctly when there is a winner 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flex": 1,
+      "height": 60,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "black",
+        "fontSize": 34,
+        "fontWeight": "bold",
+      }
+    }
+  >
+     
+    X
+     WON !
+  </Text>
+</View>
+`;
+
+exports[`WinnerBox should render correctly when there is no winner 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flex": 1,
+      "height": 60,
+      "justifyContent": "center",
+    }
+  }
+/>
+`;
