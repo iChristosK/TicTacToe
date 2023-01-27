@@ -68,10 +68,3 @@ I always like to run my applications on as many android and iOS emulator to make
 
 # TOTAL HOURS : 8.52
 
-# TODO: 
-
-test the below code with react-native-testing-library without using enzyme only jest
-
-Delete unused elements 
-(especially from styles)
-
