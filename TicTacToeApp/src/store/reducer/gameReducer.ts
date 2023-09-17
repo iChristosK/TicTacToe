@@ -1,45 +1,44 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface TicTacToeState {
-    board: string[][];
-    currentPlayer: 'X' | 'O';
-    winner: 'X' | 'O' | 'TIE' | null;
+  board: string[][];
+  currentPlayer: 'X' | 'O';
+  winner: 'X' | 'O' | 'TIE' | null;
 }
 
 const initialState: TicTacToeState = {
-    board: [
-        ['', '', ''],
-        ['', '', ''],
-        ['', '', '']
-    ],
-    currentPlayer: 'X',
-    winner: null
+  board: [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
+  ],
+  currentPlayer: 'X',
+  winner: null,
 };
 
 const gameSlice = createSlice({
-    name: 'ticTacToe',
-    initialState,
-    reducers: {
-        placeMark: (state, action) => {
-            const { row, col } = action.payload;
-            state.board[row][col] = state.currentPlayer;
-            state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
-        },
-        setWinner: (state, action) => {
-            state.winner = action.payload;
-        },
-        reset: (state) => {
-            state.board = initialState.board;
-            state.currentPlayer = initialState.currentPlayer;
-            state.winner = initialState.winner;
-        },
-    }
+  name: 'ticTacToe',
+  initialState,
+  reducers: {
+    placeMark: (state, action) => {
+      const { row, col } = action.payload;
+      state.board[row][col] = state.currentPlayer;
+      state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
+    },
+    setWinner: (state, action) => {
+      state.winner = action.payload;
+    },
+    reset: state => {
+      state.board = initialState.board;
+      state.currentPlayer = initialState.currentPlayer;
+      state.winner = initialState.winner;
+    },
+  },
 });
 
 export const { placeMark, setWinner, reset } = gameSlice.actions;
 
 export default gameSlice.reducer;
-
 
 /* I am using createSlice from redux-toolkit to create the gameReducer.
 
@@ -51,4 +50,4 @@ IMPORTANT: The placeMark action,  updates the board at the specified row and col
 
 The setWinner action, which sets the winner of the game.
 
-The reset action, which resets the board, current player and winner */ 
+The reset action, which resets the board, current player and winner */

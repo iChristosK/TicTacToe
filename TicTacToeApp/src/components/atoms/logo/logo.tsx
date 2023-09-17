@@ -1,12 +1,12 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, View } from 'react-native';
 import { LogoUrl } from '../../../utils/global';
-import { style } from './style';
+import { styles } from './styles';
+import React from 'react';
 
 export const Logo = () => {
-    return (
-        <View style={style.imageContainer}>
-            <Image style={style.image} source={{ uri: LogoUrl }} />
-        </View>
-
-    );
-}
+  return (
+    <View style={styles.imageContainer}>
+      <Image style={styles.image} source={{ uri: LogoUrl }} />
+    </View>
+  );
+};
