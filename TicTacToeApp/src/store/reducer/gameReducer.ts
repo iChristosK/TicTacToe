@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { checkWinner } from '../../logic/gameLogic';
 
 export interface TicTacToeState {
   board: string[][];
   currentPlayer: 'X' | 'O';
-  winner: 'X' | 'O' | 'TIE' | null;
+  winner: string | null;
 }
 
 const initialState: TicTacToeState = {
@@ -24,6 +25,8 @@ const gameSlice = createSlice({
       const { row, col } = action.payload;
       state.board[row][col] = state.currentPlayer;
       state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
+      console.log('state board', state.board);
+      state.winner = checkWinner(state.board);
     },
     setWinner: (state, action) => {
       state.winner = action.payload;

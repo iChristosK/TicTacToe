@@ -1,5 +1,4 @@
 import { View } from 'react-native';
-import { tieString } from '../../../utils/global';
 import CustomText from '../texts/CustomText';
 import React from 'react';
 
@@ -10,15 +9,12 @@ export interface WinnerProps {
 }
 
 export const WinnerBox = ({ winner }: WinnerProps) => {
+  const absoluteWin = winner === 'TIE' ? winner : winner;
   return (
     <View style={style.container}>
-      {winner !== null && winner !== tieString ? (
-        <CustomText style={style.winnerText}>{winner} WON !</CustomText>
-      ) : (
-        winner === tieString && (
-          <CustomText style={style.winnerText}> IT IS A {winner} ! </CustomText>
-        )
-      )}
+      {winner ? (
+        <CustomText style={style.winnerText}>{absoluteWin} </CustomText>
+      ) : null}
     </View>
   );
 };
