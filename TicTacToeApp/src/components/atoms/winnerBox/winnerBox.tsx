@@ -13,7 +13,9 @@ export const WinnerBox = ({ winner }: WinnerProps) => {
   return (
     <View style={style.container}>
       {winner ? (
-        <CustomText style={style.winnerText}>{absoluteWin} </CustomText>
+        <CustomText style={style.winnerText}>
+          {`Winner: ${absoluteWin}!`}
+        </CustomText>
       ) : null}
     </View>
   );

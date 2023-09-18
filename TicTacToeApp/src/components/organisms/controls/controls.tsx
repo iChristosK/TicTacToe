@@ -1,14 +1,10 @@
 import { View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { checkWinner } from '../../../logic/gameLogic';
-import { reset, setWinner } from '../../../store/reducer/gameReducer';
-import {
-  checkWinnerString,
-  resetString,
-  tieString,
-} from '../../../utils/global';
+import { reset } from '../../../store/reducer/gameReducer';
+import { resetString } from '../../../utils/global';
 import CustomText from '../../atoms/texts/CustomText';
-import { CombinedButtons } from '../../molecules/CombinedButtons/CombinedButtons';
+import { ResetButton } from '../../molecules/CombinedButtons/CombinedButtons';
 import { style } from './style';
 import React from 'react';
 
@@ -19,16 +15,7 @@ export interface ControlProps {
 
 export const Controls = ({ board, currentPlayer }: ControlProps) => {
   const dispatch = useDispatch();
-  function handleCheckWinner() {
-    const winner = checkWinner(board);
-    if (winner) {
-      if (winner === tieString) {
-        dispatch(setWinner(tieString));
-      } else {
-        dispatch(setWinner(winner));
-      }
-    }
-  }
+  const winner = checkWinner(board);
 
   function handleReset() {
     dispatch(reset());
@@ -36,15 +23,12 @@ export const Controls = ({ board, currentPlayer }: ControlProps) => {
 
   return (
     <View style={style.controlsContainer}>
-      <CustomText style={style.currentPlayerText}>
-        {currentPlayer} is playing!
-      </CustomText>
-      <CombinedButtons
-        winnerTitle={checkWinnerString}
-        resetTitle={resetString}
-        onPressWinner={handleCheckWinner}
-        onPressReset={handleReset}
-      />
+      {!winner ? (
+        <CustomText style={style.currentPlayerText}>
+          {currentPlayer} is playing!
+        </CustomText>
+      ) : null}
+      <ResetButton resetTitle={resetString} onPressReset={handleReset} />
     </View>
   );
 };
