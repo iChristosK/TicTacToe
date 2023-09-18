@@ -25,7 +25,6 @@ const gameSlice = createSlice({
       const { row, col } = action.payload;
       state.board[row][col] = state.currentPlayer;
       state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
-      console.log('state board', state.board);
       state.winner = checkWinner(state.board);
     },
     setWinner: (state, action) => {

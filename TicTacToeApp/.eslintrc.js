@@ -18,5 +18,9 @@ module.exports = {
         trailingComma: 'all',
       },
     ],
+    'no-console': [
+      'warn',
+      { allow: ['clear', 'info', 'error', 'dir', 'trace'] },
+    ],
   },
 };
