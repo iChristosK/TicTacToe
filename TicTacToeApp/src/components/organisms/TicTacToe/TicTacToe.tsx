@@ -1,14 +1,15 @@
-import { useColorScheme, View } from 'react-native';
-import { useSelector } from 'react-redux';
-import { TicTacToeState } from '../../../store/reducer/gameReducer';
-import { Logo } from '../../atoms/logo/logo';
-import { Board } from '../../molecules/board/Board';
-import { styles } from './style';
-import DarkMode from '../../../utils/darkmode';
-import { WinnerBox } from '../../atoms/winnerBox/winnerBox';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { Controls } from '../controls/controls';
 import React from 'react';
+import { useColorScheme, View } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { useSelector } from 'react-redux';
+
+import { TicTacToeState } from '../../../store/reducer/gameReducer';
+import DarkMode from '../../../utils/darkmode';
+import { Logo } from '../../atoms/logo/logo';
+import { WinnerBox } from '../../atoms/winnerBox/winnerBox';
+import { Board } from '../../molecules/board/Board';
+import { Controls } from '../controls/controls';
+import { styles } from './style';
 
 export const TicTacToe = () => {
   const isDarkMode = useColorScheme() === 'dark';

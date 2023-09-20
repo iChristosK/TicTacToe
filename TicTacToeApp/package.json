@@ -12,10 +12,12 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/react-native": "^11.5.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "react": "18.2.0",
     "react-native": "0.71.1",
     "react-redux": "^8.0.5",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

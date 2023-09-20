@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { checkWinner } from '../../logic/gameLogic';
 
 export interface TicTacToeState {
