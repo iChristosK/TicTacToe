@@ -1,7 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, useColorScheme } from 'react-native';
+import { StyleSheet, Text, TextStyle, useColorScheme } from 'react-native';
 
-const CustomText = (props: any) => {
+interface CustomTextProps {
+  text: string;
+  style?: TextStyle;
+}
+export function CustomText({ text, style }: CustomTextProps) {
   const colorScheme = useColorScheme();
 
   const styles = StyleSheet.create({
@@ -10,7 +14,5 @@ const CustomText = (props: any) => {
     },
   });
 
-  return <Text style={[props.style, styles.text]}> {props.children}</Text>;
-};
-
-export default CustomText;
+  return <Text style={[style, styles.text]}> {text}</Text>;
+}

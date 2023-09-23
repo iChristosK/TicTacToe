@@ -1,7 +1,7 @@
-import { View } from 'react-native';
-import CustomText from '../texts/CustomText';
 import React from 'react';
+import { View } from 'react-native';
 
+import { CustomText } from '../texts/CustomText';
 import { style } from './style';
 
 export interface WinnerProps {
@@ -13,9 +13,7 @@ export const WinnerBox = ({ winner }: WinnerProps) => {
   return (
     <View style={style.container}>
       {winner ? (
-        <CustomText style={style.winnerText}>
-          {`Winner: ${absoluteWin}!`}
-        </CustomText>
+        <CustomText text={`Winner: ${absoluteWin}!`} style={style.winnerText} />
       ) : null}
     </View>
   );
