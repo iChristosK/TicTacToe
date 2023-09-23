@@ -1,5 +1,5 @@
 export const LogoUrl =
-  'https://images.ctfassets.net/s26j9zm7rn0w/3BfQlpjLbGH80h26C3MOYS/c682424ba32cdf38de8b99f9e56d29e9/logo-color-large.png';
+  'https://camo.githubusercontent.com/56026388f0309ddf46bdbf5409d13e093295491960b0a8c8916168ecc5861972/68747470733a2f2f7261772e6769746875622e636f6d2f4568616247616d616c2f546963546163546f652f6d61737465722f436c69656e742f7372632f7265736f75726365732f696d616765732f7469632e676966';
 export const checkWinnerString = 'Check Winner';
 export const resetString = 'Reset';
 export const tieString = 'TIE';

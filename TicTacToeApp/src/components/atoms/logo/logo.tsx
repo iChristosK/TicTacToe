@@ -1,7 +1,8 @@
+import React from 'react';
 import { Image, View } from 'react-native';
+
 import { LogoUrl } from '../../../utils/global';
 import { styles } from './styles';
-import React from 'react';
 
 export const Logo = () => {
   return (
