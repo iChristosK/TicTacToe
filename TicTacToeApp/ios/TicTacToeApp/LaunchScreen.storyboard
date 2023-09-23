@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,21 +23,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="izs-qE-9ud">
-                                <rect key="frame" x="0.0" y="64" width="375" height="325"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="325" id="Qpk-hr-0CX"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="171" width="375" height="325"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="izs-qE-9ud" firstAttribute="trailing" secondItem="MN2-I3-ftu" secondAttribute="trailing" id="3UB-8g-po9"/>
-                            <constraint firstItem="izs-qE-9ud" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="64" id="8Jf-bq-uCE"/>
-                            <constraint firstItem="izs-qE-9ud" firstAttribute="leading" secondItem="MN2-I3-ftu" secondAttribute="leading" id="IMl-iL-zvw"/>
+                            <constraint firstItem="izs-qE-9ud" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="151" id="KAe-Yw-wic"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="MN2-I3-ftu" secondAttribute="bottom" constant="20" id="OZV-Vh-mqD"/>
                             <constraint firstItem="MN2-I3-ftu" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="akx-eg-2ui"/>
+                            <constraint firstItem="izs-qE-9ud" firstAttribute="leading" secondItem="MN2-I3-ftu" secondAttribute="leading" id="c1r-JT-L0V"/>
+                            <constraint firstItem="izs-qE-9ud" firstAttribute="trailing" secondItem="MN2-I3-ftu" secondAttribute="trailing" id="epP-4H-9ly"/>
                             <constraint firstItem="MN2-I3-ftu" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="i1E-0Y-4RG"/>
+                            <constraint firstItem="izs-qE-9ud" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vK1-O9-feT"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -47,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImage" width="512" height="512"/>
+        <image name="LaunchImage" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
