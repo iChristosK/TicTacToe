@@ -22,6 +22,8 @@ const gameSlice = createSlice({
   name: 'ticTacToe',
   initialState,
   reducers: {
+    //TODO: Create reducer and actions like frontend project
+    //TODO: Also add type for action
     placeMark: (state, action) => {
       const { row, col } = action.payload;
       state.board[row][col] = state.currentPlayer;
