@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk'; // Import Redux Thunk middleware
 
 import { gameReducer } from './reducers/gameReducer';
 
 export const store = configureStore({
   reducer: gameReducer,
+  middleware: [thunk],
 });
 
 /* I am importing configureStore from redux-toolkit, as well as the gameReducer from the reducer folder.

@@ -5,14 +5,8 @@ export interface TicTacToeState {
 }
 
 export interface PlaceMark {
-  payload: {
-    row: number;
-    col: number;
-  };
-}
-
-export interface SetWinner {
-  payload: PlayerType;
+  row: number;
+  col: number;
 }
 
 export type PlayerType = 'X' | 'O';
