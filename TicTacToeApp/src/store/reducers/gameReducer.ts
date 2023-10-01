@@ -1,12 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { checkWinner } from '../../logic/gameLogic';
-
-export interface TicTacToeState {
-  board: string[][];
-  currentPlayer: 'X' | 'O';
-  winner: string | null;
-}
+import { PlaceMark, SetWinner, TicTacToeState } from '../types/types';
 
 const initialState: TicTacToeState = {
   board: [
@@ -22,15 +17,13 @@ const gameSlice = createSlice({
   name: 'ticTacToe',
   initialState,
   reducers: {
-    //TODO: Create reducer and actions like frontend project
-    //TODO: Also add type for action
-    placeMark: (state, action) => {
+    placeMark: (state, action: PlaceMark) => {
       const { row, col } = action.payload;
       state.board[row][col] = state.currentPlayer;
       state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
       state.winner = checkWinner(state.board);
     },
-    setWinner: (state, action) => {
+    setWinner: (state, action: SetWinner) => {
       state.winner = action.payload;
     },
     reset: state => {
@@ -43,7 +36,7 @@ const gameSlice = createSlice({
 
 export const { placeMark, setWinner, reset } = gameSlice.actions;
 
-export default gameSlice.reducer;
+export const gameReducer = gameSlice.reducer;
 
 /* I am using createSlice from redux-toolkit to create the gameReducer.
 

@@ -3,7 +3,7 @@ import { useColorScheme, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useSelector } from 'react-redux';
 
-import { TicTacToeState } from '../../../store/reducer/gameReducer';
+import { TicTacToeState } from '../../../store/types/types';
 import DarkMode from '../../../utils/darkmode';
 import { Logo } from '../../atoms/logo/logo';
 import { WinnerBox } from '../../atoms/winnerBox/winnerBox';
@@ -16,8 +16,9 @@ export const TicTacToe = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-  const gameState = useSelector((state: TicTacToeState) => state);
-  const { board, currentPlayer, winner } = gameState;
+  const { board, currentPlayer, winner } = useSelector(
+    (state: TicTacToeState) => state,
+  );
   return (
     <DarkMode>
       <View

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { useDispatch } from 'react-redux';
 
 import { checkWinner } from '../../../logic/gameLogic';
-import { reset } from '../../../store/reducer/gameReducer';
+import { reset } from '../../../store/reducers/gameReducer';
 import { resetString } from '../../../utils/global';
 import { CustomText } from '../../atoms/texts/CustomText';
 import { ResetButton } from '../../molecules/CombinedButtons/CombinedButtons';

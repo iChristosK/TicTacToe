@@ -1,9 +1,10 @@
+import React from 'react';
 import { Text, TouchableOpacity, useColorScheme, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useDispatch } from 'react-redux';
-import { placeMark } from '../../../store/reducer/gameReducer';
+
+import { placeMark } from '../../../store/reducers/gameReducer';
 import { style } from './style';
-import React from 'react';
 
 export interface BoardProps {
   board: string[][];
@@ -11,12 +12,12 @@ export interface BoardProps {
 }
 
 export const Board = ({ board, winner }: BoardProps) => {
-  const isDarkMode = useColorScheme() === 'dark';
   const dispatch = useDispatch();
-
+  const isDarkMode = useColorScheme() === 'dark';
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
   function handlePlaceMark(row: number, col: number) {
     if (!winner && !board[row][col]) {
       dispatch(placeMark({ row, col }));
@@ -39,7 +40,7 @@ export const Board = ({ board, winner }: BoardProps) => {
           {row.map((col, colIndex) => (
             <View key={colIndex} style={style.cell}>
               <TouchableOpacity
-                style={[style.cellButton]}
+                style={style.cellButton}
                 onPress={() => handlePlaceMark(rowIndex, colIndex)}>
                 <Text style={style.cellText}>{col || ''}</Text>
               </TouchableOpacity>
