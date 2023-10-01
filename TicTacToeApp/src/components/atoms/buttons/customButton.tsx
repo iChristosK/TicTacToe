@@ -1,6 +1,7 @@
-import { GestureResponderEvent, Pressable, Text, View } from 'react-native';
-import { styles } from './styles';
 import React from 'react';
+import { GestureResponderEvent, Pressable, Text, View } from 'react-native';
+
+import { styles } from './styles';
 
 export interface ButtonProps {
   title: string;
