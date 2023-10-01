@@ -4,15 +4,15 @@ export interface TicTacToeState {
   winner: string | null;
 }
 
-export type PlayerType = 'X' | 'O';
-
-export type PlaceMark = {
+export interface PlaceMark {
   payload: {
     row: number;
     col: number;
   };
-};
+}
 
-export type SetWinner = {
+export interface SetWinner {
   payload: PlayerType;
-};
+}
+
+export type PlayerType = 'X' | 'O';

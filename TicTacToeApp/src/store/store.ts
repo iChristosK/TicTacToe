@@ -2,11 +2,9 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { gameReducer } from './reducers/gameReducer';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: gameReducer,
 });
-
-export default store;
 
 /* I am importing configureStore from redux-toolkit, as well as the gameReducer from the reducer folder.
 
