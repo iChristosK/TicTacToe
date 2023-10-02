@@ -15,7 +15,7 @@ const initialState: TicTacToeState = {
 
 const gameSlice = createSlice({
   name: 'TicTacToe',
-  initialState,
+  initialState: initialState,
   reducers: {
     placeMark: (state, action: PayloadAction<PlaceMark>) => {
       const { row, col } = action.payload;

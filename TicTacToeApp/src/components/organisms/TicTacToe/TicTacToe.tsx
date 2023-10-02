@@ -3,7 +3,8 @@ import { useColorScheme, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useSelector } from 'react-redux';
 
-import { TicTacToeState } from '../../../store/types/types';
+import { useGetPokemonByNameQuery } from '../../../services/pokemon';
+import { GameState } from '../../../store/types/types';
 import DarkMode from '../../../utils/darkmode';
 import { Logo } from '../../atoms/logo/logo';
 import { WinnerBox } from '../../atoms/winnerBox/winnerBox';
@@ -16,9 +17,16 @@ export const TicTacToe = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur');
+  console.log('data', data);
+  console.log('error', error);
+  console.log('isLoading', isLoading);
+
   const { board, currentPlayer, winner } = useSelector(
-    (state: TicTacToeState) => state,
+    (state: GameState) => state.game,
   );
+
   return (
     <DarkMode>
       <View
