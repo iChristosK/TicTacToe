@@ -1,5 +1,5 @@
 import React from 'react';
-import { useColorScheme, View } from 'react-native';
+import { Image, useColorScheme, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useSelector } from 'react-redux';
 
@@ -7,6 +7,7 @@ import { useGetPokemonByNameQuery } from '../../../services/pokemon';
 import { GameState } from '../../../store/types/types';
 import DarkMode from '../../../utils/darkmode';
 import { Logo } from '../../atoms/logo/logo';
+import { CustomText } from '../../atoms/texts/CustomText';
 import { WinnerBox } from '../../atoms/winnerBox/winnerBox';
 import { Board } from '../../molecules/board/Board';
 import { Controls } from '../controls/controls';
@@ -17,12 +18,7 @@ export const TicTacToe = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
-  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur');
-  console.log('data', data);
-  console.log('error', error);
-  console.log('isLoading', isLoading);
-
+  const { data, error, isLoading } = useGetPokemonByNameQuery('pikachu');
   const { board, currentPlayer, winner } = useSelector(
     (state: GameState) => state.game,
   );
@@ -38,6 +34,22 @@ export const TicTacToe = () => {
         <WinnerBox winner={winner} />
         <Board board={board} winner={winner} />
         <Controls board={board} currentPlayer={currentPlayer} />
+        {error ? (
+          <CustomText text={'Oh no, there was an error getting the pokemon'} />
+        ) : isLoading ? (
+          <CustomText text={'Loading...'} />
+        ) : data ? (
+          <>
+            <CustomText text={data.species.name} />
+            <Image
+              style={styles.pokemonContainer}
+              source={{
+                uri: data.sprites.front_shiny,
+              }}
+              alt={data.species.name}
+            />
+          </>
+        ) : null}
       </View>
     </DarkMode>
   );

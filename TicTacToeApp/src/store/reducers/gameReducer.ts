@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { checkWinner } from '../../logic/gameLogic';
-import { PlaceMark, PlayerType, TicTacToeState } from '../types/types';
+import { PlaceMark, PlayerType, TicTacToeGame } from '../types/types';
 
-const initialState: TicTacToeState = {
+const initialState: TicTacToeGame = {
   board: [
     ['', '', ''],
     ['', '', ''],
@@ -23,10 +23,6 @@ const gameSlice = createSlice({
       state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
       state.winner = checkWinner(state.board);
     },
-    // TODO: Find a way to add an async action to the gameSlice
-    // https://medium.com/@ozantekindev/async-operations-in-redux-with-the-redux-toolkit-thunk-e7d024cbf875
-
-    // TODO: LEARN THIS https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow#redux-application-data-flow
     setWinner: (state, action: PayloadAction<PlayerType>) => {
       state.winner = action.payload;
     },

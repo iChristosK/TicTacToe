@@ -13,6 +13,14 @@ export type PlayerType = 'X' | 'O';
 
 export type Pokemon = {
   name: string;
+  species: {
+    name: string;
+    url: string;
+  };
+  sprites: {
+    front_default: string;
+    front_shiny: string;
+  };
   url: string;
 };
 
